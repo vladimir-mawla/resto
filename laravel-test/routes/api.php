@@ -21,3 +21,4 @@ Route::post('/editresto', [RestoController::class, 'editResto']);
 
 Route::post('/addrev', [ReviewController::class, 'addRev']);
 Route::get('/getrevs', [ReviewController::class, 'getAllRevs']);
+Route::post('/getrev', [ReviewController::class, 'getRev']);

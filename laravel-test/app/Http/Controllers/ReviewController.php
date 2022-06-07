@@ -29,4 +29,11 @@ class ReviewController extends Controller
             "reviews" => $reviews
         ], 200);
     }
+    public function getRev(Request $request){
+        $reviews = Review::all()->where('resto_id', $request->resto_id);
+        return response()->json([
+            "status" => "success",
+            "reviews" => $reviews
+        ], 200);
+    }
 }
