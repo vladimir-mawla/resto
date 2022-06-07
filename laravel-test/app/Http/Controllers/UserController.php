@@ -46,7 +46,7 @@ class UserController extends Controller
 
         $email = $request->email;
         $password = hash('sha256', $request->password);
-        $user = User::where('email', '=', $email)->first();
+        $user = User::where('email', $email)->first();
         if ($user === null){
             return response()->json([
                 "status" => "User not found",
@@ -62,7 +62,17 @@ class UserController extends Controller
                 "status" => "Wrong Input",
             ], 200);
         }
+    }
+    public function editUser(Request $request){
         
+        $user_id = $request->user_id;
+        $name = $request->name;
+
+        User::where('user_id', $user_id)->update(['name'=>$name]);
+
+        return response()->json([
+            "status" => "Done",
+        ], 200);
     }
 
 
