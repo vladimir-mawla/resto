@@ -69,7 +69,6 @@ class UserController extends Controller
         $name = $request->name;
         $email = $request->email;
         $password = $request->password;
-        User::where("id",$request->id)->update(['F_name'=>$request->fname],['L_name'=>$request->lname]);
         User::where('user_id', $user_id)->update(['name'=>$name],['email'=>$email],['password'=>hash('sha256', $password)]);
 
         return response()->json([
