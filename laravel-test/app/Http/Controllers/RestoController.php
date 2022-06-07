@@ -26,18 +26,31 @@ class RestoController extends Controller
         ], 200);
     }
 
-        // add restaurant
-        public function addResto(Request $request){
+    // add restaurant
+    public function addResto(Request $request){
 
-            $restaurants = new Restaurant;
-            $restaurants->name = $request->name;
-            $restaurants->location = $request->location;
-            $restaurants->save();
-    
-    
-            return response()->json([
-                "status" => "Success",
-            ], 200);
-        }
+        $restaurants = new Restaurant;
+        $restaurants->name = $request->name;
+        $restaurants->location = $request->location;
+        $restaurants->save();
+
+
+        return response()->json([
+            "status" => "Success",
+        ], 200);
+    }
+    //edit restaurants
+    public function editResto(Request $request){
+        
+        $resto_id = $request->resto_id;
+        $name = $request->name;
+        $location = $request->location;
+        Restaurant::where('resto_id', $resto_id)->update(['name'=>$name]);
+
+        return response()->json([
+            "status" => "Done",
+        ], 200);
+    }
+
 
 }
