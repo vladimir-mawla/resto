@@ -6,8 +6,7 @@ use App\Http\Controllers\UserController;
 
 
 
-Route::post('/users', [UserController::class, 'getAllUsers']);
-//Route::get('/n', [UserController::class, 'hi']);
-
+Route::get('/users', [UserController::class, 'getAllUsers']);
 Route::post('/signup', [UserController::class, 'signUp']);
-Route::get('/bi', [UserController::class, 'getUserById']);
+Route::post('/getuser', [UserController::class, 'getUserById']);
+Route::post('/login', [UserController::class, 'logIn']);
