@@ -51,6 +51,14 @@ class RestoController extends Controller
             "status" => "Done",
         ], 200);
     }
+    //Delete restaurant
+    public function deleteResto(Request $request){
+        Restaurant::where('resto_id',$request->resto_id)->delete();
+        
+        return response()->json([
+            "status" => "success",
+        ], 200);
+    }
 
 
 }
