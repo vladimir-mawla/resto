@@ -21,4 +21,12 @@ class ReviewController extends Controller
             "status" => "Success",
         ], 200);
     }
+    //Get all reviews
+    public function getAllRevs(){
+        $reviews = Review::all()->where('accepted', 1);
+        return response()->json([
+            "status" => "success",
+            "reviews" => $reviews
+        ], 200);
+    }
 }
