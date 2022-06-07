@@ -15,3 +15,4 @@ Route::post('/edituser', [UserController::class, 'editUser']);
 
 Route::post('/getresto', [RestoController::class, 'getResto']);
 Route::post('/getallrestos', [RestoController::class, 'getAllRestos']);
+Route::post('/addresto', [RestoController::class, 'addResto']);
