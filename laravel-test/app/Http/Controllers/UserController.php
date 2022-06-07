@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Resto;
+
 
 class UserController extends Controller
 {
@@ -63,6 +63,7 @@ class UserController extends Controller
             ], 200);
         }
     }
+    //edit User
     public function editUser(Request $request){
         
         $user_id = $request->user_id;
