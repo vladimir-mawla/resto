@@ -7,19 +7,21 @@ use App\Http\Controllers\RestoController;
 use App\Http\Controllers\ReviewController;
 
 
-
+// User controllers
 Route::get('/users', [UserController::class, 'getAllUsers']);
 Route::post('/signup', [UserController::class, 'signUp']);
 Route::post('/getuser', [UserController::class, 'getUserById']);
 Route::post('/login', [UserController::class, 'logIn']);
 Route::post('/edituser', [UserController::class, 'editUser']);
 
+// Restaurant controllers
 Route::post('/getresto', [RestoController::class, 'getResto']);
 Route::get('/getallrestos', [RestoController::class, 'getAllRestos']);
 Route::post('/addresto', [RestoController::class, 'addResto']);
 Route::post('/editresto', [RestoController::class, 'editResto']);
 Route::post('/deleteresto', [RestoController::class, 'deleteResto']);
 
+// Review controllers
 Route::post('/addrev', [ReviewController::class, 'addRev']);
 Route::get('/get_accepted_revs', [ReviewController::class, 'getAcceptedRevs']);
 Route::get('/get_pending_revs', [ReviewController::class, 'getPendingRevs']);
