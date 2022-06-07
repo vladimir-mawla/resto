@@ -23,3 +23,4 @@ Route::post('/addrev', [ReviewController::class, 'addRev']);
 Route::get('/get_accepted_revs', [ReviewController::class, 'getAcceptedRevs']);
 Route::get('/get_pending_revs', [ReviewController::class, 'getPendingRevs']);
 Route::post('/getrev', [ReviewController::class, 'getRev']);
+Route::post('/acceptrev', [ReviewController::class, 'acceptRev']);
