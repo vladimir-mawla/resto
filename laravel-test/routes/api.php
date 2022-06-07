@@ -20,5 +20,6 @@ Route::post('/addresto', [RestoController::class, 'addResto']);
 Route::post('/editresto', [RestoController::class, 'editResto']);
 
 Route::post('/addrev', [ReviewController::class, 'addRev']);
-Route::get('/getrevs', [ReviewController::class, 'getAllRevs']);
+Route::get('/get_accepted_revs', [ReviewController::class, 'getAcceptedRevs']);
+Route::get('/get_pending_revs', [ReviewController::class, 'getPendingRevs']);
 Route::post('/getrev', [ReviewController::class, 'getRev']);

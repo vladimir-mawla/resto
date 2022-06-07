@@ -21,14 +21,24 @@ class ReviewController extends Controller
             "status" => "Success",
         ], 200);
     }
-    //Get all reviews
-    public function getAllRevs(){
+    //Get accepted reviews
+    public function getAcceptedRevs(){
         $reviews = Review::all()->where('accepted', 1);
         return response()->json([
             "status" => "success",
             "reviews" => $reviews
         ], 200);
     }
+
+    //Get all reviews
+    public function getPendingRevs(){
+        $reviews = Review::all()->where('accepted', 0);
+        return response()->json([
+            "status" => "success",
+            "reviews" => $reviews
+        ], 200);
+    }
+
     public function getRev(Request $request){
         $reviews = Review::all()->where('resto_id', $request->resto_id);
         return response()->json([
