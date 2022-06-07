@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RestoController;
+use App\Http\Controllers\ReviewController;
 
 
 
@@ -18,4 +19,4 @@ Route::post('/getallrestos', [RestoController::class, 'getAllRestos']);
 Route::post('/addresto', [RestoController::class, 'addResto']);
 Route::post('/editresto', [RestoController::class, 'editResto']);
 
-
+Route::post('/addrev', [ReviewController::class, 'addRev']);
